@@ -1,0 +1,110 @@
+<!DOCTYPE html> 
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Melisa & Arel: Călătoria Interioară</title>
+    <style>
+        body {
+            font-family: 'Merriweather', serif;
+            text-align: center;
+            background-color: #0d0d0d;
+            color: #e0e0e0;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+        }
+        .step {
+            display: none;
+        }
+        .active {
+            display: block;
+            animation: fadeIn 1s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes fadeOut {
+            from { opacity: 1; }
+            to { opacity: 0; }
+        }
+        button {
+            background-color: #2c2c2c;
+            color: #e0e0e0;
+            border: 1px solid #444;
+            padding: 15px;
+            cursor: pointer;
+            margin-top: 20px;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #444;
+        }
+        .choices button {
+            display: block;
+            width: 100%;
+            margin: 10px 0;
+        }
+        #step10.fade-out {
+            animation: fadeOut 30s ease-in-out forwards;
+        }
+
+        /* Efect de Oglindă Spartă */
+        #video {
+            width: 100%;
+            height: auto;
+            background-image: url('https://raw.githubusercontent.com/Melisaarel/ayna/main/pngwing.com.png'); /* Imaginea oglinzii sparte */
+            background-size: cover;
+            filter: grayscale(100%) contrast(120%) brightness(80%);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="step1" class="step active">
+            <h2>Începe Călătoria Ta</h2>
+            <p>"Această călătorie îți va reflecta sufletul. Ești pregătit să răspunzi la întrebări?"</p>
+            <button onclick="startQuestions()">Începe</button>
+        </div>
+        
+        <div id="question-container" class="step">
+            <h2 id="question-text"></h2>
+            <div class="choices" id="choices-container"></div>
+        </div>
+        
+        <div id="step9" class="step">
+            <h2> Melisa & Arel </h2>
+            <p id="arelMessage"></p>
+            <button onclick="nextStep(10)">Continuă</button>
+        </div>
+        
+        <div id="step10" class="step">
+            <h2>Tu în Oglindă</h2>
+            <p>Deschide camera telefonului și lasă-ți sentimentele să curgă liber în oglindă.</p>
+            <video id="video" autoplay></video>
+            <p>"Această călătorie este doar începutul. Împărtășește-ți propria poveste: #Melisa_Arel"</p>
+            <button onclick="restart()">Repetă Călătoria</button>
+        </div>
+    </div>
+    
+    <script>
+        const questions = [
+            { q: "1-Ce simți că îți lipsește cel mai mult în viața ta acum?", choices: ["Iertare", "Pasiune", "Încredere în sine", "Liniște", "Frică", "Trecut", "Curaj"] },
+            { q: "2-Unde simți că te pierzi cel mai mult?", choices: ["În trecut", "În așteptările societății", "În teama de eșec", "Uitând de visele tale", "Când nu te poți exprima", "Trăind în umbra altora", "Trăind o viață pe care nu o iubești"] },
+            { q: "3-Ce emoție din trecut a lăsat cele mai adânci urme în tine?", choices: ["Furie", "Frică", "Tristețe", "Singurătate", "Dezamăgire", "Neîncredere", "Regret"] },
+            { q: "4-Dacă ai putea deschide o ușă către un mister, ce ai alege?", choices: ["Ușa Iertării", "Ușa Descoperirii Propriei Puteri", "Ușa Curajului Necunoscut", "Ușa Pasiunilor Pierdute", "Ușa Descoperirii Sinelui", "Ușa Întoarcerii în Timp", "Ușa Fericirii Necondiționate"] },
+            { q: "5-Ce îți spune cel mai des vocea ta interioară?", choices: ["Acționează", "Iubește mai mult", "Iartă", "Descoperă-te", "Ai răbdare", "Crede în tine", "Lasă-te purtat de val"] },
+            { q: "6-Care este cea mai mare frică a ta?", choices: ["Eșecul", "Să nu fii iubit", "Să nu îți folosești potențialul", "Să rămâi singur", "Să irosești timpul", "Să faci alegeri greșite", "Să pierzi controlul"] },
+            { q: "7-De ce ai cea mai mare nevoie în viață?", choices: ["Liniște", "Curaj", "Inspirație", "Conexiune", "Libertate", "Încredere", "Autorealizare"] }
+        ];
+
+        function restart() {
+            document.location.reload();
+        }
+    </script>
+</body>
+</html>
