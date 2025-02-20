@@ -1,9 +1,9 @@
 <!DOCTYPE html> 
-<html lang="ro">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Melisa & Arel: Călătoria Interioară</title>
+    <title>Melisa & Arel: Călătorie interioară.</title>
     <style>
         body {
             font-family: 'Merriweather', serif;
@@ -53,11 +53,11 @@
             animation: fadeOut 30s ease-in-out forwards;
         }
 
-        /* Efect de Oglindă Spartă */
+        /* Efect de oglindă spartă. */
         #video {
             width: 100%;
             height: auto;
-            background-image: url('https://raw.githubusercontent.com/Melisaarel/ayna/main/pngwing.com.png'); /* Imaginea oglinzii sparte */
+            background-image: url('https://raw.githubusercontent.com/Melisaarel/ayna/main/pngwing.com.png'); /* Kırık aynanın görseli */
             background-size: cover;
             filter: grayscale(100%) contrast(120%) brightness(80%);
         }
@@ -66,8 +66,8 @@
 <body>
     <div class="container">
         <div id="step1" class="step active">
-            <h2>Începe Călătoria Ta</h2>
-            <p>"Această călătorie îți va reflecta sufletul. Ești pregătit să răspunzi la întrebări?"</p>
+            <h2>Călătoria ta începe.</h2>
+            <p>"Această călătorie îți va ține o oglindă. Ești pregătit să răspunzi la întrebări?"</p>
             <button onclick="startQuestions()">Începe</button>
         </div>
         
@@ -77,34 +77,106 @@
         </div>
         
         <div id="step9" class="step">
-            <h2> Melisa & Arel </h2>
+            <h2> Melisa & Arel  </h2>
             <p id="arelMessage"></p>
             <button onclick="nextStep(10)">Continuă</button>
         </div>
         
         <div id="step10" class="step">
-            <h2>Tu în Oglindă</h2>
-            <p>Deschide camera telefonului și lasă-ți sentimentele să curgă liber în oglindă.</p>
+            <h2> "Melisa & Arel" </h2>
+            <p>"Deschide camera telefonului și lasă-ți liber sentimentele să curgă în fața oglinzii."</p>
             <video id="video" autoplay></video>
             <p>"Această călătorie este doar începutul. Împărtășește-ți propria poveste: #Melisa_Arel"</p>
-            <button onclick="restart()">Repetă Călătoria</button>
+            <button onclick="restart()">Repetă călătoria.</button>
         </div>
     </div>
     
     <script>
-        const questions = [
-            { q: "1-Ce simți că îți lipsește cel mai mult în viața ta acum?", choices: ["Iertare", "Pasiune", "Încredere în sine", "Liniște", "Frică", "Trecut", "Curaj"] },
-            { q: "2-Unde simți că te pierzi cel mai mult?", choices: ["În trecut", "În așteptările societății", "În teama de eșec", "Uitând de visele tale", "Când nu te poți exprima", "Trăind în umbra altora", "Trăind o viață pe care nu o iubești"] },
-            { q: "3-Ce emoție din trecut a lăsat cele mai adânci urme în tine?", choices: ["Furie", "Frică", "Tristețe", "Singurătate", "Dezamăgire", "Neîncredere", "Regret"] },
-            { q: "4-Dacă ai putea deschide o ușă către un mister, ce ai alege?", choices: ["Ușa Iertării", "Ușa Descoperirii Propriei Puteri", "Ușa Curajului Necunoscut", "Ușa Pasiunilor Pierdute", "Ușa Descoperirii Sinelui", "Ușa Întoarcerii în Timp", "Ușa Fericirii Necondiționate"] },
-            { q: "5-Ce îți spune cel mai des vocea ta interioară?", choices: ["Acționează", "Iubește mai mult", "Iartă", "Descoperă-te", "Ai răbdare", "Crede în tine", "Lasă-te purtat de val"] },
-            { q: "6-Care este cea mai mare frică a ta?", choices: ["Eșecul", "Să nu fii iubit", "Să nu îți folosești potențialul", "Să rămâi singur", "Să irosești timpul", "Să faci alegeri greșite", "Să pierzi controlul"] },
-            { q: "7-De ce ai cea mai mare nevoie în viață?", choices: ["Liniște", "Curaj", "Inspirație", "Conexiune", "Libertate", "Încredere", "Autorealizare"] }
-        ];
+       const questions = [
+           { q: "1-Ce simți că îți lipsește cel mai mult în viața ta acum?", choices: ["Iertare", "Pasiune", "Încredere în sine", "Liniște", "Frică", "Trecut", "Curaj"] },
+           { q: "2-Unde simți că te pierzi cel mai mult?", choices: ["În trecut", "În așteptările societății", "În teama de eșec", "Uitând de visele tale", "Când nu te poți exprima", "Trăind în umbra altora", "Trăind o viață pe care nu o iubești"] },
+           { q: "3-Ce emoție din trecut a lăsat cele mai adânci urme în tine?", choices: ["Furie", "Frică", "Tristețe", "Singurătate", "Dezamăgire", "Neîncredere", "Regret"] },
+           { q: "4-Dacă ai putea deschide o ușă către un mister, ce ai alege?", choices: ["Ușa Iertării", "Ușa Descoperirii Propriei Puteri", "Ușa Curajului Necunoscut", "Ușa Pasiunilor Pierdute", "Ușa Descoperirii Sinelui", "Ușa Întoarcerii în Timp", "Ușa Fericirii Necondiționate"] },
+           { q: "5-Ce îți spune cel mai des vocea ta interioară?", choices: ["Acționează", "Iubește mai mult", "Iartă", "Descoperă-te", "Ai răbdare", "Crede în tine", "Lasă-te purtat de val"] },
+           { q: "6-Care este cea mai mare frică a ta?", choices: ["Eșecul", "Să nu fii iubit", "Să nu îți folosești potențialul", "Să rămâi singur", "Să irosești timpul", "Să faci alegeri greșite", "Să pierzi controlul"] },
+           { q: "7-De ce ai cea mai mare nevoie în viață?", choices: ["Liniște", "Curaj", "Inspirație", "Conexiune", "Libertate", "Încredere", "Autorealizare"] }
+];
+
+        
+        let answers = [];
+        let currentStep = 0;
+
+        function startQuestions() {
+            currentStep = 0;
+            answers = [];
+            nextQuestion();
+        }
+
+        function nextQuestion() {
+            if (currentStep < questions.length) {
+                document.querySelectorAll('.step').forEach(el => el.classList.remove('active'));
+                document.getElementById('question-container').classList.add('active');
+                document.getElementById('question-text').innerText = questions[currentStep].q;
+                let choicesContainer = document.getElementById('choices-container');
+                choicesContainer.innerHTML = '';
+                questions[currentStep].choices.forEach(choice => {
+                    let btn = document.createElement('button');
+                    btn.innerText = choice;
+                    btn.onclick = () => storeAnswer(choice);
+                    choicesContainer.appendChild(btn);
+                });
+            } else {
+                analyzeAnswers();
+            }
+        }
+
+        function storeAnswer(choice) {
+            answers.push(choice);
+            currentStep++;
+            nextQuestion();
+        }
+
+        function analyzeAnswers() {
+            document.querySelectorAll('.step').forEach(el => el.classList.remove('active'));
+            document.getElementById('step9').classList.add('active');
+            document.getElementById('arelMessage').innerText = generateArelMessage(answers);
+        }
+
+        function generateArelMessage(answers) {
+           const messages = {
+           "Iertare": "A ierta înseamnă să te eliberezi din lanțurile sufletului tău. Să porți greutatea trecutului nu face decât să te închidă; dar iertarea te eliberează. Să eliberezi resentimentele din tine nu înseamnă doar să-l eliberezi pe celălalt, ci mai ales pe tine însuți. Iertarea îți ușurează inima, te renaște. Nu uita, iertarea nu înseamnă să uiți trecutul, ci să îți alegi propria pace. 📕 Tată, te iert, a șoptit pentru sine, mai întâi în tăcere, apoi cu o credință profundă. Cu fiecare repetare, greutatea care i se acumulase în suflet de ani de zile părea să se ușureze. (Melisa)",
+           "Pasiune": "Urmează-ți pasiunile, pentru că ele te aduc în contact cu adevărata ta esență. Obiectivele externe sunt importante, dar ascultarea dorințelor și motivațiilor profunde din interiorul tău te va menține pe drumul cel bun în viață. Chiar și în fața dificultăților, pasiunile tale te vor susține și te vor duce acolo unde trebuie să fii. Descoperă-ți propriul drum prin pasiunile tale interioare. 📕 Arta nu este oare un risc? Fiecare tușă de pensulă, fiecare alegere de culoare este o încercare de a atinge o emoție. A arăta frumusețea oamenilor este datoria unui artist. (Arel)",
+           "Încredere în sine": "Încrederea în sine este cea mai pură reflecție a puterii tale interioare. Credința pe care o ai în tine determină cum te prezinți lumii exterioare. Lasă-ți deoparte temerile și îndoielile și acceptă puterea care vine din adâncul sufletului tău. La fiecare pas, recunoaște-ți forța interioară, pentru că încrederea în sine nu este doar o atitudine, ci cel mai puternic mesaj pe care îl oferi lumii prin însăși existența ta. Ai încredere în tine, pentru că nimeni altcineva nu te poate înțelege și ghida mai bine. 📕 Ține-mă de mână, a spus copilul, Nu-ți face griji, te voi proteja eu. Melisa a fost surprinsă de atitudinea plină de încredere a copilului, dar a găsit-o foarte drăguță. (Efe)",
+           "Liniște": "Nu căuta liniștea în exterior, pentru că adevărata pace se află în interiorul tău. Când te retragi din zgomotul lumii și pornești într-o călătorie interioară, vei găsi seninătatea pe care o cauți. Îndepărtează-te de haosul gândurilor tale și ascultă liniștea din adâncul sufletului tău. Liniștea nu este un loc exterior care te așteaptă, ci un univers care există în tine. Să-l descoperi înseamnă să pășești în calmul inimii tale. 📕 Da, exact așa. Acum, nu avem nevoie nici de greutatea trecutului, nici de incertitudinea viitorului. Existăm doar. Aici și acum. Și liniștea este ascunsă exact în acest moment. (Arel)",
+           "Frică": "Fricile tale nu te definesc; ele sunt doar ecouri trecătoare, umbre care stau în spatele puterii tale interioare. Nu te lăsa învins de fricile tale, pentru că ele nu sunt esența ta. Dincolo de ele, curajul și rezistența ta te așteaptă. Nu permite ca vocea fricilor tale să te copleșească; adevărata ta identitate se conturează atunci când le înfrunți. Depășirea fricilor înseamnă să te regăsești și să îți eliberezi cea mai puternică versiune a ta. 📕 Acestea sunt doar cuvinte urâte care ți-au fost spuse. Atâta timp cât nu crezi în ele, nu te pot reține. Nu au rădăcini. (Efe)",
+           "Trecut": "Lasă în urmă povara trecutului, pentru că este doar o amintire care te ține pe loc. Concentrează-te pe prezent; fiecare moment este o nouă oportunitate, un nou început. Curăță-ți mintea de umbrele trecutului și umple-ți inima cu lumina prezentului. Fiecare respirație este o șansă nouă; fiecare pas este o urmă a renașterii tale. Nu rămâne blocat în trecut, pentru că adevărata bogăție a vieții se află în clipa de acum și în frumusețea pe care aceasta o oferă. 📕 Tot ce ai văzut la expoziție era o reflecție a lumii tale interioare. În prima zi, era plină de întuneric și incertitudine, dar treptat, aceste forme abstracte s-au transformat în claritate și liniște. (Arel)",
+           "Curaj": "Creează-ți propriul drum, pentru că nicio hartă nu te poate duce exact acolo unde trebuie să fii. Vocea ta interioară te va ghida pe un drum pe care doar tu îl poți parcurge. Nu te pierde pe potecile altora; lasă-ți propriile urme cu pașii tăi. Drumul tău poate fi dificil, dar fiecare obstacol poartă o lecție care te va face mai puternic. Să-ți trasezi propriul traseu înseamnă să devii eroul propriei tale povești. Nu uita, cele mai mari descoperiri încep atunci când te pierzi pe propriul drum. 📕 Ți-ai terminat călătoria, Melisa. Acum, tu ești propria ta lumină. Existența mea nu mai este necesară. (Arel)"
+};
+            return messages[answers[0]] || "Descoperă-ți propriul drum. Viața te duce uneori în colțuri neașteptate. Nu uita de adevărata ta ființă, visele și pasiunile tale. Ceea ce credeai că ai pierdut nu a fost niciodată cu adevărat separat de tine. 📕 Ceea ce cauți nu a fost niciodată departe de tine, Melisa. Dar când îți vei lua privirea de la oglindă și te vei uita cu adevărat la tine? Adevărata ta oglindă este acolo.";
+        }
+
+        function nextStep(step) {
+            document.querySelectorAll('.step').forEach(el => el.classList.remove('active'));
+            document.getElementById('step' + step).classList.add('active');
+            if (step === 10) {
+                startCamera();
+            }
+        }
+
+        function startCamera() {
+            navigator.mediaDevices.getUserMedia({ video: true })
+                .then(stream => {
+                    const video = document.getElementById('video');
+                    video.srcObject = stream;
+                })
+                .catch(err => {
+                    console.error("A apărut o eroare la deschiderea camerei.: ", err);
+                });
+        }
 
         function restart() {
             document.location.reload();
         }
     </script>
 </body>
-</html>
+</html>               
